@@ -12,13 +12,17 @@ namespace herbglitch {
         Ball::~Ball(){}
 
         void Ball::update(){
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){ Reset(); return; }
             if(ballState == BallState::STOPPED){
                 PauseStart();
                 return;
             }
             if(isBoundsCollided()){
                 if(collided != lastCollided){
-                    addDirection(90);
+                    if(direction <= 90){ setDirection(90 + (90 - direction)); }
+                    else if(direction <= 180){ setDirection(90 - (180 - direction)); }
+                    else if(direction <= 270){ setDirection(270 + (270 - direction)); }
+                    else { setDirection(270 - (360 - direction)); }
                     collided = lastCollided;
                 }
             }

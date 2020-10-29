@@ -1,8 +1,10 @@
 #ifndef GAME_H
 #define GAME_H
 
-#define SCREEN_WIDTH 1920.0f
-#define SCREEN_HEIGHT 1080.0f
+#define WINDOW_WIDTH 1920.0f
+#define WINDOW_HEIGHT 1080.0f
+#define SCREEN_WIDTH WINDOW_WIDTH
+#define SCREEN_HEIGHT (WINDOW_HEIGHT - 40.0f)
 
 #include <SFML/Graphics.hpp>
 #include "handler/handler.hpp"

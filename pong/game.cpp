@@ -5,7 +5,7 @@ namespace herbglitch {
         data = new game::Data();
         data->handler = new Handler(data);
 
-        data->window.create(sf::VideoMode(1920, 1080), "Pong", sf::Style::Close | sf::Style::Titlebar);
+        data->window.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Pong", sf::Style::Close | sf::Style::Titlebar);
         Run();
     }
 
