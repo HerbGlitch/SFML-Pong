@@ -29,7 +29,7 @@ namespace herbglitch {
             sf::Keyboard::Key down;
 
             Direction direction = Direction::NONE;
-            float playerSpeed = 5.0f;
+            float playerSpeed = 10.0f;
         };
     }
 }

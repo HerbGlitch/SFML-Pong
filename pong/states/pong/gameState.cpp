@@ -35,6 +35,7 @@ namespace herbglitch {
             for(pong::Player *player : players){
                 if(tools::isCollided(ball->getSprite(), player->getSprite())){
                     ball->addDirection((rand() % 90) + 90);
+                    ball->addSpeed((rand() % 3) + 2.0);
                 }
             }
         }

@@ -45,5 +45,7 @@ namespace herbglitch {
             }
             this->direction = (this->direction + direction < 0)? this->direction + direction + 360 : this->direction + direction;
         }
+
+        void Ball::addSpeed(float speed){ this->speed += speed; }
     }
 }

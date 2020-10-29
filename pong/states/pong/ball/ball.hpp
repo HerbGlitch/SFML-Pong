@@ -20,6 +20,7 @@ namespace herbglitch {
             float getDirection();
             void setDirection(float direction);
             void addDirection(float direction);
+            void addSpeed(float speed);
 
         private:
             void GetKeyPress();
