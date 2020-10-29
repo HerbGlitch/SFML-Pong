@@ -7,6 +7,7 @@ namespace herbglitch {
 
     namespace pong {
         enum class BallState { MOVING, STOPPED };
+        enum class Walls { UP, DOWN, LEFT, RIGHT, NONE };
 
         class Ball {
         public:
@@ -16,11 +17,16 @@ namespace herbglitch {
             void update();
             void render();
 
+            void Reset();
+            void PauseStart();
+            bool Scored();
+
             sf::Sprite &getSprite();
             float getDirection();
             void setDirection(float direction);
             void addDirection(float direction);
             void addSpeed(float speed);
+
 
         private:
             void GetKeyPress();
@@ -29,11 +35,15 @@ namespace herbglitch {
 
             game::Data *data;
             sf::Sprite ball;
+            sf::Clock clock;
 
-            BallState ballState = BallState::MOVING;
-            float speed = 5.0f;
+            BallState ballState = BallState::STOPPED;
+            Walls collided = Walls::NONE;
+            Walls lastCollided = Walls::NONE;
+            
+            float speed;
             //this angle is in degrees
-            float direction = 45.0f;
+            float direction;
         };
     }
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "../states/states.hpp"
-#include "../states/menu/menuState.hpp"
+#include "../states/menu/menu.hpp"
 #include "../manager/config.hpp"
 #include <SFML/Graphics.hpp>
 
